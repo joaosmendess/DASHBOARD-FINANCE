@@ -7,12 +7,14 @@ interface IselectInputProps {
     value: string | number;
     label: string | number;
   }[],
+  onChange(event: React.ChangeEvent<HTMLSelectElement>) : void | undefined;
+ defaultValue ?: string | number | readonly string []| undefined;
 }
 
-const SelectInput: React.FC<IselectInputProps> = ({ options }) => {
+const SelectInput: React.FC<IselectInputProps> = ({ options, onChange, defaultValue }) => {
   return (
     <Container>
-      <select>
+      <select onChange={onChange} defaultValue={defaultValue}> 
         {
        options.map(option => (
 

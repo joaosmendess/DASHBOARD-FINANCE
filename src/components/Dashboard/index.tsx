@@ -11,16 +11,16 @@ const Dashboard: React.FC = () => {
     { value: 9, label: "Setembro" },
   ];
 
-  const years = [
-    { value: 2023, label: 2023 },
-    { value: 2022, label: 2022 },
-    { value: 2021, label: 2021 },
+  const options = [
+    { value: 'maria', label: 'maria' },
+    { value: 'joao', label: 'joao' },
+    { value: 'luana', label: 'luana' },
   ];
   return (
     <Container>
     <ContentHeader title="Dashboard" lineColor="#F7931B">
-      <SelectInput options={months}/>
-      <SelectInput options={years}/>
+      <SelectInput options={options} onChange={() => {}}/>
+      
 
     </ContentHeader>
     </Container>
