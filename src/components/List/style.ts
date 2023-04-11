@@ -9,7 +9,7 @@ export const Container = styled.div `
 `
 
 
-export const Content = styled.div `
+export const Content = styled.main `
 
 
 
@@ -25,15 +25,17 @@ justify-content: center;
 .tag-filter {
     font-size: 18px;
     font-weight: 500;
+
     background-color: transparent ;
     color:  ${props => props.theme.color.White};
 
-margin-bottom: 30px;
+    margin-bottom: 30px;
     margin: 0 10px;
     transition: opacity .3s;
+    opacity: .5;
 
     :hover { 
-        opacity: .7s;
+        opacity: .7;
     }
 
    
@@ -43,7 +45,7 @@ margin-bottom: 30px;
         display: block ; 
         width: 55px;
         margin: 0 auto ;
-        border-bottom: 10px solid ${props => props.theme.color.warning};
+        border-bottom: 10px solid ${props => props.theme.color.sucess};
 
     }  
     .tag-filter-eventual::after { 
@@ -51,8 +53,12 @@ margin-bottom: 30px;
         display: block ; 
         width: 55px;
         margin: 0 auto ;
-        border-bottom: 10px solid ${props => props.theme.color.sucess};
+        border-bottom: 10px solid ${props => props.theme.color.warning};
 
     }  
+
+    .tag-actived {
+        opacity: 1 ;
+    }
 
 `
