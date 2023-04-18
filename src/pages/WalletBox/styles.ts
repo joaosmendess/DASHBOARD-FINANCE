@@ -42,8 +42,7 @@ overflow: hidden;
     position: absolute;
 
     bottom: 10px;
-    right: 50px;
-    padding:5px;
-  
+    right: 40px;
+    
 }
 `;
