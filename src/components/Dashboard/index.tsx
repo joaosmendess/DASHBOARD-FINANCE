@@ -1,14 +1,19 @@
 import React from "react";
-import { Container } from "./style";
+import { Container, Content } from "./style";
+
 import ContentHeader from "../../pages/ContentHeader";
+import SelectInput from '../../pages/SelectInput'
+import WalletBox from "../../pages/WalletBox";
+
 import { useState } from "react";
 import { useMemo } from "react";
+
+
 import expenses from "../../repositories/expenses";
 import gains from "../../repositories/gains";
 import listOfMonths from '../../utils/months'
 
 
-import SelectInput from '../../pages/SelectInput'
 const Dashboard: React.FC = () => {
 
   const [monthSelected, setMonthSelected] = useState<number>
@@ -100,6 +105,38 @@ const years = useMemo(() => {
       
 
     </ContentHeader>
+
+<Content>
+
+<WalletBox 
+title ="saldo"
+amount =  {150.00}
+footerLabel = {"atualizando com base nas entradas e saídas"}
+icon = "dollar"
+color="#4E41F0 "
+
+/>
+<WalletBox 
+title ="entradas"
+amount =  {5000.00}
+footerLabel = {"atualizando com base nas entradas e saídas"}
+icon = "arrowUp"
+color="#F7931B "
+
+/>
+<WalletBox 
+title ="saídas"
+amount =  {4850.00}
+footerLabel = {"atualizando com base nas entradas e saídas"}
+icon = "arrowDown"
+color="#E44C4E "
+
+/>
+
+</Content>
+
+
+
     </Container>
   );
 };
