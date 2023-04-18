@@ -7,9 +7,9 @@ import { Container } from './style';
 
 interface IMenssageBox {
     title: string;
-    description: string;
+    description: string ;
     footerText: string ;
-    icon: string
+    icon: string ;
 }
 
 
