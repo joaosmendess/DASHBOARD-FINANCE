@@ -5,6 +5,7 @@ import ContentHeader from "../../pages/ContentHeader";
 import SelectInput from "../../pages/SelectInput";
 import WalletBox from "../../pages/WalletBox";
 import MenssageBox from "../../pages/MenssageBox";
+import PieCharts from "../../pages/PieChart";
 
 import { useState } from "react";
 import { useMemo } from "react";
@@ -15,6 +16,8 @@ import listOfMonths from "../../utils/months";
 
 import happy from "../../assets/happy.svg";
 import sad from "../../assets/sad.svg";
+import grinning from '../../assets/grinning.svg'
+
 
 const Dashboard: React.FC = () => {
   const [monthSelected, setMonthSelected] = useState<number>(
@@ -107,7 +110,7 @@ const Dashboard: React.FC = () => {
         title: "Ufaa!",
         description: "Neste mês, você gastou exatamente o que ganhou.",
         footerText: "Tenha cuidado. No proximo mês tente poupar o seu dinheiro",
-        icon: happy,
+        icon: grinning,
 
       }
     }
@@ -183,6 +186,7 @@ const Dashboard: React.FC = () => {
           footerText={message.footerText}
           icon={message.icon}
         />
+        <PieCharts/>
       </Content>
     </Container>
   );
