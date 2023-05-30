@@ -17,7 +17,7 @@ import {
 } from "react-icons/md";
 
 const Aside: React.FC = () => {
-  return (
+  return ( 
     <Container>
       <Header>
         <LogImg src={logoImg} alt="Logo da imagem" />
