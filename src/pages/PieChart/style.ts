@@ -72,7 +72,7 @@ margin-bottom: 7px;
 > div {
     background-color: ${props => props.color};
 
-    width: 40px;
+    width: 51px;
     height: 45px;
     border-radius: 5px;
 

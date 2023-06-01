@@ -6,6 +6,7 @@ import SelectInput from "../../pages/SelectInput";
 import WalletBox from "../../pages/WalletBox";
 import MenssageBox from "../../pages/MenssageBox";
 import PieCharts from "../../pages/PieChart";
+import HistoryBox from "../../pages/Historybox";
 
 import { useState } from "react";
 import { useMemo } from "react";
@@ -16,8 +17,7 @@ import listOfMonths from "../../utils/months";
 
 import happy from "../../assets/happy.svg";
 import sad from "../../assets/sad.svg";
-import grinning from '../../assets/grinning.svg'
-
+import grinning from "../../assets/grinning.svg";
 
 const Dashboard: React.FC = () => {
   const [monthSelected, setMonthSelected] = useState<number>(
@@ -70,6 +70,7 @@ const Dashboard: React.FC = () => {
         }
       }
     });
+    
     return total;
   }, [monthSelected, yearSelected]);
 
@@ -104,58 +105,100 @@ const Dashboard: React.FC = () => {
         footerText: "Verifique seus gastos e tente cortar",
         icon: sad,
       };
-    } 
-    else if (totalBalance === 0) {
+    } else if (totalBalance === 0) {
       return {
         title: "Ufaa!",
         description: "Neste mês, você gastou exatamente o que ganhou.",
         footerText: "Tenha cuidado. No proximo mês tente poupar o seu dinheiro",
         icon: grinning,
-
-      }
-    }
-    else  (totalBalance > 0) ;{
+      };
+    } else totalBalance > 0;
+    {
       return {
         title: "Muito bem!",
         description: "Sua carteira está positiva!",
         footerText: "Continue assim. Considere investir o seu saldo.",
         icon: happy,
-      }
+      };
     }
-  }, [totalBalance]);
+  }, [totalBalance, totalGains, totalExpenses]);
 
+  const relationExpensesVersusGains = useMemo(() => {
+    const total = totalGains + totalExpenses;
 
-const relationExpensesVersusGains = useMemo(() => {
+    const percentGains = (totalGains / total) * 100;
+    const percentExpenses = (totalExpenses / total) * 100;
 
-  const total = totalGains + totalExpenses;
+    const data = [
+      {
+        name: "Saídas",
+        value: totalExpenses,
+        percent: Number(percentGains.toFixed(1)),
+        color: "#E44C43",
+      },
 
-  const percentGains = (totalGains / total) * 100
-  const percentExpenses = (totalExpenses / total) * 100
-  
-  const data = [
-    {
-      name: "Entradas",
-      value : totalExpenses,
-      percent: Number(percentGains.toFixed(1)),
-      color: '#E44C43'
-    },
+      {
+        name: "Entradas",
+        value: totalExpenses,
+        percent: Number(percentExpenses.toFixed(1)),
+        color: "#F7931B",
+      },
+    ];
 
-    {
-      name: "Saídas",
-      value : totalExpenses,
-      percent:Number(percentExpenses.toFixed(1)),
-      color: '#F7931B'
-    },
+    return data;
+  }, [totalGains, totalExpenses]);
 
+  const historyData = useMemo(() => {
+    return listOfMonths.map((_, month) => {
+      let amountEntry = 0;
+      gains.forEach((gain) => {
+        const date = new Date(gain.date);
+        const gainMonth = date.getMonth();
+        const gainYear = date.getFullYear();
 
-  ];
+        if (gainMonth === month && gainYear === yearSelected) {
+          try {
+            amountEntry += Number(gain.amount);
+          } catch {
+            throw new Error(
+              "amountEntry is invalid. amountEntry must be valid number."
+            );
+          }
+        }
+      });
 
-  return data
-  
-}, [totalGains, totalExpenses]);
+      let amountOutput = 0;
+      expenses.forEach((expense) => {
+        const date = new Date(expense.date);
+        const expenseMonth = date.getMonth();
+        const expenseYear = date.getFullYear();
 
+        if (expenseMonth === month && expenseYear === yearSelected) {
+          try {
+            amountOutput += Number(expense.amount);
+          } catch {
+            throw new Error(
+              "amountOutput is invalid. amountEntry must be valid number."
+            );
+          }
+        }
+      });
 
+      return {
+        monthNumber: month,
+        month: listOfMonths[month].substr(0, 3),
+        amountEntry,
+        amountOutput
+      };
+    })
+    .filter((item)=> {
+         const currentMonth = new Date().getMonth();
+         
+         const currenteYear= new Date().getFullYear();
 
+         return (yearSelected === currenteYear && item.monthNumber <= currentMonth) || (yearSelected < currenteYear)
+    });
+  }, [yearSelected]);
 
   const handleMonthSelected = (month: string) => {
     try {
@@ -219,7 +262,8 @@ const relationExpensesVersusGains = useMemo(() => {
           footerText={message.footerText}
           icon={message.icon}
         />
-        <PieCharts data ={ relationExpensesVersusGains}/>
+        <PieCharts data={relationExpensesVersusGains} />
+        <HistoryBox data={historyData} lineColorAmountEntry="#F7931B" lineColorAmountOutput="#E44C4E" />
       </Content>
     </Container>
   );

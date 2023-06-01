@@ -26,7 +26,7 @@ const PieCharts: React.FC <IPieChartProps> = ({data}) => (
         {
             data.map(indicator => (
             <Legend key={indicator.name} color={indicator.color}>
-          <div>{indicator.percent}</div>
+          <div>{indicator.percent}%</div>
           <span>{indicator.name} </span>
         </Legend>
         ))
@@ -35,7 +35,7 @@ const PieCharts: React.FC <IPieChartProps> = ({data}) => (
       </LegendContainer>
     </SideLeft>
 
-    <SideRight >
+    <SideRight>
       <ResponsiveContainer >
         <PieChart>
             <Pie data={data} dataKey="percent">

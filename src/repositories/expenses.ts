@@ -5,8 +5,8 @@ export default [
   {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2023-01-23"},
   {"description":"Compras do mês",        "amount":"625.78","type":"saída","frequency":"recorrente","date":"2023-01-23"},
   {"description":"Lanche",                "amount":"45.70", "type":"saída","frequency":"eventual",  "date":"2023-01-23"},
-  {"description":"Blusa",                 "amount":"95.70", "type":"saída","frequency":"eventual",  "date":"2023-01-23"},
-  {"description":"Energia elétrica",      "amount":"125.55","type":"saída","frequency":"recorrente","date":"2023-02-10"},
+  {"description":"Blusa",                 "amount":"400.70", "type":"saída","frequency":"eventual",  "date":"2023-01-23"},
+  {"description":"Energia elétrica",      "amount":"205.55","type":"saída","frequency":"recorrente","date":"2023-02-10"},
   {"description":"Água",                  "amount":"90.15", "type":"saída","frequency":"recorrente","date":"2023-02-15"},
   {"description":"Telefone",              "amount":"99.99", "type":"saída","frequency":"recorrente","date":"2023-02-23"},
   {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2023-02-23"},
@@ -26,7 +26,7 @@ export default [
   {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2023-04-23"},
   {"description":"Compras do mês",        "amount":"600.00","type":"saída","frequency":"recorrente","date":"2023-04-25"},
   {"description":"Parcela do Celular 3/5","amount":"150.99","type":"saída","frequency":"eventual",  "date":"2023-04-26"},
-  {"description":"Ebook de React Js",     "amount":"85.95", "type":"saída","frequency":"eventual",  "date":"2023-04-13"},
+  {"description":"Ebook de React Js",     "amount":"1505.95", "type":"saída","frequency":"eventual",  "date":"2023-04-13"},
   {"description":"Energia elétrica",      "amount":"125.55","type":"saída","frequency":"recorrente","date":"2023-05-10"},
   {"description":"Água",                  "amount":"90.15", "type":"saída","frequency":"recorrente","date":"2023-05-15"},
   {"description":"Telefone",              "amount":"99.99", "type":"saída","frequency":"recorrente","date":"2023-05-23"},
@@ -45,7 +45,14 @@ export default [
   {"description":"Água",                  "amount":"90.00", "type":"saída","frequency":"recorrente","date":"2023-07-15"},
   {"description":"Telefone",              "amount":"99.99", "type":"saída","frequency":"recorrente","date":"2023-07-23"},
   {"description":"Plano de Saúde",        "amount":"300.00","type":"saída","frequency":"recorrente","date":"2023-07-23"},
-  {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2023-07-25"},
+  {"description":"Compras do mês",        "amount":"580.00","type":"saída","frequency":"recorrente","date":"2023-07-25"},
+  {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2023-08-25"},
+  {"description":"Compras do mês",        "amount":"200.00","type":"saída","frequency":"recorrente","date":"2023-09-25"},
+  {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2023-10-25"},
+  {"description":"Compras do mês",        "amount":"150.00","type":"saída","frequency":"recorrente","date":"2023-11-25"},
+  {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2023-12-25"},
+
+
   {"description":"Cafeteira",             "amount":"250.00","type":"saída","frequency":"eventual",  "date":"2023-07-26"},
   {"description":"Pizza",                 "amount":"60.00", "type":"saída","frequency":"eventual",  "date":"2023-07-19"}
 ]
