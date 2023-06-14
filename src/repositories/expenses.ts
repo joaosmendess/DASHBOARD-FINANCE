@@ -50,7 +50,7 @@ export default [
   {"description":"Compras do mês",        "amount":"200.00","type":"saída","frequency":"recorrente","date":"2023-09-25"},
   {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2023-10-25"},
   {"description":"Compras do mês",        "amount":"150.00","type":"saída","frequency":"recorrente","date":"2023-11-25"},
-  {"description":"Compras do mês",        "amount":"700.00","type":"saída","frequency":"recorrente","date":"2023-12-25"},
+ 
 
 
   {"description":"Cafeteira",             "amount":"250.00","type":"saída","frequency":"eventual",  "date":"2023-07-26"},

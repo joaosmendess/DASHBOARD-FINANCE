@@ -14,8 +14,7 @@ export default [
   { "description": "Salário",     "amount": "2000.12", "type": "entrada", "frequency": "recorrente", "date": "2023-09-10" }, 
   { "description": "Freela",     "amount": "400.12", "type": "entrada", "frequency": "recorrente", "date": "2023-10-10" },
   { "description": "Freela",     "amount": "1000.12", "type": "entrada", "frequency": "recorrente", "date": "2023-11-10" }, 
-  { "description": "Salário",     "amount": "2500.12", "type": "entrada", "frequency": "recorrente", "date": "2023-12-10" }, 
-
+  
 
 
 
