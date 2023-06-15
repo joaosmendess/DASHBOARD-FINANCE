@@ -11,6 +11,7 @@ import BarChartBox from "../../pages/BarChartBox";
 
 import { useState } from "react";
 import { useMemo } from "react";
+import { useCallback } from "react";
 
 import expenses from "../../repositories/expenses";
 import gains from "../../repositories/gains";
@@ -314,23 +315,23 @@ const Dashboard: React.FC = () => {
     ];
   }, [monthSelected, yearSelected]);
 
-  const handleMonthSelected = (month: string) => {
+  const handleMonthSelected = useCallback((month: string) => {
     try {
       const parseMonth = Number(month);
       setMonthSelected(parseMonth);
     } catch (error) {
       throw new Error("invalid month value. Is accept 0 - 24.");
     }
-  };
+  } ,[]);
 
-  const handleYearSelected = (year: string) => {
+  const handleYearSelected = useCallback((year: string) => {
     try {
       const parseYear = Number(year);
       setYearSelected(parseYear);
     } catch (error) {
       throw new Error("invalid year value. Is accept integer numbers.");
     }
-  };
+  }, []);
 
   return (
     <Container>
