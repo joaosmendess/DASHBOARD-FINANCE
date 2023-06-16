@@ -1,11 +1,13 @@
-import React from 'react'
-import {BrowserRouter} from 'react-router-dom'
-import App from './app.routes'
-const Routes: React.FC = () => 
-   (
-     <App/>
-     
-  )
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AuthRoutes from './auth.routes';
 
-//acho q o erro era o browser do app.routes
-export default Routes;
+const AppRoutes: React.FC = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/*" element={<AuthRoutes />} />
+    </Routes>
+  </BrowserRouter>
+);
+
+export default AppRoutes;
