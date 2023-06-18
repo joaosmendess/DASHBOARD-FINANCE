@@ -1,17 +1,17 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Dashboard from '../components/Dashboard';
-import List from '../components/List';
-import Layout from '../pages/Layout';
+import React from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+
+import Layout from "../pages/Layout";
+import Dashboard from "../components/Dashboard";
+import List from "../components/List";
 
 const AppRoutes: React.FC = () => (
   <Layout>
-   <BrowserRouter>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/list/:type" element={<List />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/list/:type"  element={<List/>} />
+
       </Routes>
-      </BrowserRouter>
   </Layout>
 );
 

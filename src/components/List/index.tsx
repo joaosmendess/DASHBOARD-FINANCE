@@ -16,7 +16,11 @@ import formatDate from "../../utils/formatDate";
 import listOfmonths from "../../utils/months";
 
 interface IRouterParams {
-  [key: string]: string | undefined;
+match?: {
+  params:{
+    type: string
+  }
+}
 }
 
 interface IData {
@@ -28,7 +32,7 @@ interface IData {
   id: string;
 }
 
-const List: React.FC = () => {
+const List: React.FC  <IRouterParams> = ({match}) => {
   const [data, setData] = useState<IData[]>([]);
 
   const [monthSelected, setMonthSelected] = useState<number>
@@ -43,13 +47,13 @@ const List: React.FC = () => {
     "eventual",
   ]);
 
-  const params = useParams<IRouterParams>();
-  const { type } = params;
+  const movimentType = match?.params?.type;
+
 
   
 
   const pageData = useMemo(() => {
-    return type === "entry-balance"
+    return movimentType === "entry-balance"
       ? {
           title: "Entradas",
           lineColor: " #4E41F0",
@@ -60,7 +64,7 @@ const List: React.FC = () => {
           lineColor: "#E44C4E",
           data: expenses,
         };
-  }, [type]);
+  }, [movimentType]);
 
   const months = useMemo(() => {
     return listOfmonths.map((month, index) => {
@@ -69,7 +73,7 @@ const List: React.FC = () => {
         label: month,
       };
     });
-  }, [pageData]);
+  }, []);
 
   const years = useMemo(() => {
     let uniqueYears: number[] = [];
@@ -90,7 +94,7 @@ const List: React.FC = () => {
         label: year,
       };
     });
-  }, [data]);
+  }, [pageData]);
 
   const handleFrequencyClick = (frequency: string) => {
     const alreadySelected = frequencyFilterSelected.findIndex(
@@ -156,7 +160,7 @@ const {data} = pageData
     });
 
     setData(formattedData);
-  }, [data, monthSelected, yearSelected, frequencyFilterSelected]);
+  }, [pageData, monthSelected, yearSelected, data.length, frequencyFilterSelected]);
 
   return (
     <Container>

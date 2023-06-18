@@ -1,6 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { } from 'react-switch';
+import { Route ,Routes} from 'react-router-dom';
 
 import SignIn from '../components/Signin';
 
@@ -10,4 +9,4 @@ const AuthRoutes: React.FC = () => (
   </Routes>
 );
 
-export default AuthRoutes
+export default AuthRoutes;

@@ -7,7 +7,14 @@ import {
   Title,
   MenuContainer,
   MenuItemLink,
+  MenuItemButton
 } from "./style";
+
+
+import { Link } from "react-router-dom";
+
+
+import { useAuth } from "../../hooks/auth";
 
 import {
   MdDashboard,
@@ -17,6 +24,10 @@ import {
 } from "react-icons/md";
 
 const Aside: React.FC = () => {
+
+const {signOut }= useAuth();
+
+
   return ( 
     <Container>
       <Header>
@@ -25,23 +36,23 @@ const Aside: React.FC = () => {
       </Header>
 
       <MenuContainer>
-        <MenuItemLink href="/dashboard">
+        <MenuItemLink as={Link} to = "/">
           <MdDashboard />
           Dashboard
         </MenuItemLink>
 
-        <MenuItemLink href="/list/entry-balance">
+        <MenuItemLink as={Link} to="/list/entry-balance">
           <MdArrowUpward />
           Entradas
         </MenuItemLink>
-        <MenuItemLink href="/list/exit-balance">
+        <MenuItemLink as={Link} to="/list/exit-balance" >
           <MdArrowDownward />
           Saídas
         </MenuItemLink>
-        <MenuItemLink href="#">
+        <MenuItemButton onClick={signOut} as={Link} to="/">
           <MdExitToApp />
           Sair
-        </MenuItemLink>
+        </MenuItemButton>
       </MenuContainer>
     </Container>
   );
