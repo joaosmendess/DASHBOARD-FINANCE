@@ -45,13 +45,17 @@ const iconSelected = () => {
   return (
     <Container color={color}>
         <span> {title} </span>
+        <h1>
+          <strong>R$</strong>
+          
        <CountUp 
              end={amount}
-             prefix={'R$ '}
+             prefix={''}
              decimal=','
              decimals={2}
        
        />
+       </h1>
         <small> {footerLabel} </small>
          <img src= {iconSelected()} alt={title} />
       

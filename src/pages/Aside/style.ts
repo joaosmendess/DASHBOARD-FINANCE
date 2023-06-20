@@ -64,6 +64,7 @@ margin: 7px 0;
 display: flex;
 align-items: center;
 transition: opacity .3s;
+text-decoration: none;
 
 &:hover{
     opacity: .7;

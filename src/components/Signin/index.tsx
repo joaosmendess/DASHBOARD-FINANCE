@@ -24,8 +24,7 @@ const SignIn: React.FC = () => {
       </Logo>
 
       <Form
-      method="post"
-      action="/submit"
+   
         onSubmit={() => {
           signIn(email, password);
         }}
