@@ -4,6 +4,11 @@ interface IContainerProps {
     menuIsOpen : boolean;
 }
 
+interface IThemeToggleFooter{
+    menuIsOpen : boolean;
+}
+
+
 export const Container = styled.div <IContainerProps> `
 
 grid-area: AS;
@@ -15,18 +20,21 @@ position: relative;
 
 
 @media (max-width: 600px) {
-    padding-left: 7px;
-    position: fixed;
+    padding-left: 20px;
+   
     z-index: 2;
 
 width: 170px;
 
     height: ${props=> props.menuIsOpen ? '100vh ': '70px'};
     overflow: hidden;
-
+    position: fixed;
+    
     ${props=> !props.menuIsOpen && css`
     border: none;
+   
     border-bottom: 1px solid  ${props => props.theme.color.gray};
+    
     `}
 }
 
@@ -153,4 +161,21 @@ display: none;
 
 }
 
+
+
+
+
+
 `; 
+
+export const ThemeToggleFooter = styled.footer <IThemeToggleFooter>`
+
+display: none;
+position: absolute;
+bottom:30px ;
+
+@media (max-width: 470px) {
+    display: ${props => props.menuIsOpen ? 'flex' : 'none'};
+}
+
+`

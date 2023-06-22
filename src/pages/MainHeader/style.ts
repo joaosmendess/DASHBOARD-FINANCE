@@ -1,5 +1,7 @@
-import styled from "styled-components";
-import ToggleComponent from '../Toggle'
+import styled, {css} from "styled-components";
+interface IContainerProps {
+    menuIsOpen : boolean;
+}
 export const Container = styled.div `
 
 grid-area: MH;
@@ -9,6 +11,17 @@ justify-content: space-between;
 align-items: center;
 padding: 0 10px;
 border-bottom: 1px solid ${props => props.theme.color.gray};
+
+
+@media (max-width: 600px) {
+    background-color:${props =>props.theme.color.secondary};
+   position: fixed;
+   width: 100%;
+   height: 70px;
+   overflow: hidden;
+   z-index: 2;
+
+}
 
 `;
 
@@ -26,10 +39,3 @@ export const UserName = styled.span `
 
 `;
 
-
-export const Toggle = styled(ToggleComponent) `
-
-
-
-
-`;

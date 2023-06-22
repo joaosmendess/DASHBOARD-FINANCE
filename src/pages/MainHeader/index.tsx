@@ -2,6 +2,7 @@ import React, {useMemo, useState} from 'react'
 
 import emojis from '../../utils/emojis';
 
+import Toggle from '../Toggle';
 
 import { useTheme } from '../../hooks/theme';
 
@@ -11,7 +12,7 @@ import {
   Profile, 
   Welcome,
   UserName,
-  Toggle
+  
 
 } from './style';
 
@@ -37,7 +38,7 @@ const emoji = useMemo(() => {
 }, [])
 
   return (
-    <Container>
+    <Container >
   <Toggle
   labelLeft='Light'
   labelRight='Dark'
