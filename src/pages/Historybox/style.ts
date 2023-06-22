@@ -45,6 +45,12 @@ width: 100%;
 }
 
 
+@media (max-width: 1200px) {
+
+    flex-direction: column;
+}
+
+
 `
 
 
@@ -65,7 +71,7 @@ display: flex;
 align-items: center;
 
 margin-bottom: 7px;
-margin-left: 7px;
+margin-left: 16px;
 padding-right: 16px;
 > div {
     background-color: ${props => props.color};
@@ -87,6 +93,12 @@ padding-right: 16px;
 
 
 
+@media (max-width: 1280px) {
 
+>div {
+    width: 30px;
+    height: 30px;
+}
+}
 
 `

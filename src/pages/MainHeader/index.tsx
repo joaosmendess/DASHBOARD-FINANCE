@@ -10,9 +10,12 @@ import {
   Container, 
   Profile, 
   Welcome,
-  UserName} from './style';
+  UserName,
+  Toggle
 
-  import Toggle from '../Toggle'
+} from './style';
+
+  
   
 
 const MainHeader : React.FC = () => {
@@ -35,7 +38,7 @@ const emoji = useMemo(() => {
 
   return (
     <Container>
-  <Toggle 
+  <Toggle
   labelLeft='Light'
   labelRight='Dark'
   checked={darkTheme}
