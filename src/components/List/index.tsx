@@ -51,7 +51,7 @@ const List: React.FC<IRouterParams> = ({ match }) => {
           }
           :       
           {
-              title: 'Saídas',
+              title: 'Entradas',
               lineColor: '#E44C4E',
               data: expenses
           }       
