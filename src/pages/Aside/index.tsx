@@ -80,7 +80,7 @@ const handleChangeTheme = () => {
           <MdArrowUpward />
           Entradas
         </MenuItemLink>
-        <MenuItemLink as={Link} to="/list/entry-balance" >
+        <MenuItemLink as={Link} to="/list/exit-balance" >
           <MdArrowDownward />
           Saídas
         </MenuItemLink>

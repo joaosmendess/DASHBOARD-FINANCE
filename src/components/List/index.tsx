@@ -51,8 +51,8 @@ const List: React.FC<IRouterParams> = ({ match }) => {
           }
           :       
           {
-              title: 'Saídas',
-              lineColor: '#E44C4E',
+              title: 'Entradas',
+              lineColor: '#4E41F0',
               data: expenses
           }       
   },[movimentType]);
